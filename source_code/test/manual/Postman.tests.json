@@ -1,0 +1,402 @@
+{
+	"info": {
+		"_postman_id": "761a81b0-83a0-407c-bd8e-d06946b673b4",
+		"name": "DENIM Reverse Engineering Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30513630"
+	},
+	"item": [
+		{
+			"name": "/static 200 one-element repository list (unit)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    \"https://github.com/overleaf/document-updater.git\"\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/static",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"static"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/static 200 multi-element repository list",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    \"https://github.com/overleaf/track-changes.git\",\r\n    \"https://github.com/overleaf/real-time.git\",\r\n    \"https://github.com/overleaf/filestore.git\",\r\n    \"https://github.com/overleaf/redis-wrapper.git\",\r\n    \"https://github.com/overleaf/document-updater.git\"\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/static",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"static"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/static 200 one-element repository list (integration)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    \"https://github.com/overleaf/document-updater.git\"\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/static",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"static"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/static 200 multi-element repository list",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    \"https://github.com/overleaf/track-changes.git\",\r\n    \"https://github.com/overleaf/real-time.git\",\r\n    \"https://github.com/overleaf/filestore.git\",\r\n    \"https://github.com/overleaf/redis-wrapper.git\",\r\n    \"https://github.com/overleaf/document-updater.git\"\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/static",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"static"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/static 404 repository list with private repositories (unit)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    \"https://github.com/private/private.git\",\r\n    \"\",\r\n    null\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/static",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"static"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/static 404 repository list with private repositories (integration)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    \"https://github.com/private/private.git\",\r\n    \"\",\r\n    null\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/static",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"static"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/static 404 empty repository list (unit)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    \r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/static",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"static"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/static 404 empty repository list (integration)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/static",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"static"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/static 404 repository list with empty repository item (unit)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    \"\"\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/static",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"static"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/static 404 repository list with empty repository item (integration)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    \"\"\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/static",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"static"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/static 404 repository list with null repository item (unit)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    null\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/static",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"static"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/static 404 repository list with null repository item (integration)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    null\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/static",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"static"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/static 404 no repository list (unit)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/static",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"static"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/static 404 no repository list (integration)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/static",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"static"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
